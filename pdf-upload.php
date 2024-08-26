@@ -4,10 +4,17 @@ if (isset($_FILES['pdf_file'])) {
     $fileTmp = $_FILES['pdf_file']['tmp_name'];
     $fileType = $_FILES['pdf_file']['type'];
 
+<<<<<<< HEAD
   
     if ($fileType == "application/pdf") {
         $uploadDir = "uploads/";
 
+=======
+    if ($fileType == "application/pdf") {
+        $uploadDir = "uploads/";
+
+      
+>>>>>>> audio-file-upload
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
@@ -15,7 +22,11 @@ if (isset($_FILES['pdf_file'])) {
         $filePath = $uploadDir . basename($fileName);
 
         if (move_uploaded_file($fileTmp, $filePath)) {
+<<<<<<< HEAD
           
+=======
+            
+>>>>>>> audio-file-upload
             echo "<script type='text/javascript'>
                     window.open('$filePath', '_blank');
                     window.location.href = 'index.php'; // Redirect back to the form page or wherever needed
